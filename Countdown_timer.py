@@ -13,7 +13,7 @@ root.geometry("400x230+500+50")
 root.resizable(0, 0)
 
 # Giving the window some color
-root.configure(bg="purple")
+root.configure(bg="LightPink1")
 # Adding columns
 root.columnconfigure(0, weight=2)
 root.columnconfigure(1, weight=2)
@@ -74,12 +74,16 @@ def open_topLevel():
     top.bgPic = PhotoImage(file="deadpoolBG.gif")  # Assign the image to an attribute of the Toplevel widget
     top_background = Label(top, image=top.bgPic)
     top_background.pack()
-    top_label = Label(top, text="Time's up! \n\n" + message.get(), font=("Helvetica", 20, "bold"),
+    top_label = Label(top, text="Time's up!", font=("Helvetica", 20, "bold"), bg="LightPink1",
                       fg="#8B0000")
+    #Another label to display the message from the input window
+    top_label_message = Label(top, text=message.get(), font=("Helvetica", 20, "bold", "underline"), bg="LightPink1", fg="#8B0000")
     #Button to go back to main window.
-    top_btn = Button(top, text="Thank you!", command=top.destroy)
-    top_label.pack()
-    top_btn.pack()
+    top_btn = Button(top, text="Thank you!", borderwidth=3, relief="raised", font=("Helvetica", 15),
+                     command=top.destroy)
+    top_label.pack(pady=5)
+    top_label_message.pack(pady=5)
+    top_btn.pack(pady=10)
 
 
 
