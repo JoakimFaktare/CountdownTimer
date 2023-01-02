@@ -58,7 +58,7 @@ secondEntry = Entry(root, width=2, font=("Arial", 18, ""),
 secondEntry.grid(column=3, row=1, sticky=W)
 
 # field to enter message you want to show up in pop up window when time is up
-messageEntry = Entry(root, width=10, font=("Arial", 18, ""),
+messageEntry = Entry(root, width=14, font=("Arial", 18, ""),
                      textvariable=message)
 messageEntry.grid(column=2, row=6, pady=10, padx=5)
 
@@ -77,7 +77,8 @@ def open_topLevel():
     top_label = Label(top, text="Time's up!", font=("Helvetica", 20, "bold"), bg="LightPink1",
                       fg="#8B0000")
     #Another label to display the message from the input window
-    top_label_message = Label(top, text=message.get(), font=("Helvetica", 20, "bold", "underline"), bg="LightPink1", fg="#8B0000")
+    top_label_message = Label(top, text=message.get(), font=("Helvetica", 20, "bold", "underline"), bg="LightPink1",
+                              fg="#8B0000")
     #Button to go back to main window.
     top_btn = Button(top, text="Thank you!", borderwidth=3, relief="raised", font=("Helvetica", 15),
                      command=top.destroy)
