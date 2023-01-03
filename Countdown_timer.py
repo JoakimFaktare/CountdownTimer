@@ -2,8 +2,7 @@ import time
 from tkinter import *
 from tkinter import PhotoImage
 import winsound
-import threading
-from tkinter import messagebox
+
 
 # creating Tk window
 root = Tk()
@@ -89,27 +88,27 @@ def open_topLevel():
     top_btn.pack(pady=10)
 
 #Variable set to false to be able to stop thread later
-stop_thread = False
+stop_timer = False
 
 #Function to reset timer down to zero and stop the timer
 def reset_timer():
-    global stop_thread
-    stop_thread = True
+    global stop_timer
+    stop_timer = True
     hour.set("00")
     minute.set("00")
     second.set("00")
 
 #Function for the timer itself with input from user
 def submit():
-    global stop_thread
-    stop_thread = False
+    global stop_timer
+    stop_timer = False
     try:
         # the input provided by the user is
         # stored in here :temp
         temp = int(hour.get()) * 3600 + int(minute.get()) * 60 + int(second.get())
     except:
         print("Please input the right value")
-    while not stop_thread and temp != -1:
+    while not stop_timer and temp != -1:
 
         # divmod(firstvalue = temp//60, secondvalue = temp%60)
         mins, secs = divmod(temp, 60)
@@ -144,7 +143,7 @@ def submit():
         temp -= 1
 
 
-# button widget
+# button widget to set time and start timer
 start_btn = Button(root, text='Set Time Countdown', bd='5',
                    command=submit)
 start_btn.grid(column=2, row=8, padx=5, pady=5)
