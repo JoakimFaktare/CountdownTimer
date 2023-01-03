@@ -149,7 +149,7 @@ start_btn = Button(root, text='Set Time Countdown', bd='5',
                    command=submit)
 start_btn.grid(column=2, row=8, padx=5, pady=5)
 #Button to stop the countdown and reset the timer
-reset_button = Button(root, text="Reset Timer", command=reset_timer)
+reset_button = Button(root, text="Reset Timer", bd='5', command=reset_timer)
 reset_button.grid(column=2, row=9, padx=5, pady=5)
 
 # infinite loop which is required to
