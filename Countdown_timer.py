@@ -87,7 +87,7 @@ def open_topLevel():
     top_label_message.pack(pady=5)
     top_btn.pack(pady=10)
 
-#Variable set to false to be able to stop thread later
+#Variable set to false to be able to stop timer later
 stop_timer = False
 
 #Function to reset timer down to zero and stop the timer
